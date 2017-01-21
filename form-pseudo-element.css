@@ -1,0 +1,61 @@
+/*单选框*/
+.pseudo-radio{
+    color: #39b94e;
+    width: 1em;
+    height: 1em;
+    padding: 2px;
+    border: 1px solid;
+    display: inline-block;
+    border-radius: 50%;
+}
+.pseudo-radio>input{
+    position: absolute;
+    margin: 0;
+    opacity: 0;
+    vertical-align: bottom;
+}
+.pseudo-radio>input+.pseudo-radio-container{
+    display: inline-block;
+    width: inherit;
+    height: inherit;
+    position: absolute;
+    border-radius: inherit;
+    transition: background-color .5s;
+}
+.pseudo-radio>input:checked+.pseudo-radio-container{
+    background-color: currentColor;
+}
+.pseudo-radio::after{
+    content:"r";
+    opacity: 0;
+}
+/*复选框*/
+.pseudo-checkbox{
+    color: #39b94e;
+    width: 1em;
+    height: 1em;
+    padding: 2px;
+    border: 1px solid;
+    display: inline-block;
+}
+.pseudo-checkbox>input{
+    position: absolute;
+    margin: 0;
+    opacity: 0;
+    vertical-align: bottom;
+}
+.pseudo-checkbox>input+.pseudo-checkbox-container{
+    display: inline-block;
+    width: inherit;
+    height: inherit;
+    position: absolute;
+    transition: background-color .5s;
+}
+.pseudo-checkbox>input:checked+.pseudo-checkbox-container{
+    background-color: currentColor;
+}
+.pseudo-checkbox::after{
+    content:"c";
+    opacity: 0;
+    display: inline-block;
+}
