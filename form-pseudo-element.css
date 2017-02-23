@@ -115,6 +115,3 @@
     opacity: 0;
     display: inline-block;
 }
-.icon-check:before {
-    content: "\e903";
-}
