@@ -20,7 +20,7 @@
     height: inherit;
     position: absolute;
     border-radius: inherit;
-    transition: background-color .5s;
+    transition: background-color .3s;
 }
 .pseudo-radio>input:checked+.pseudo-radio-container{
     background-color: currentColor;
@@ -49,7 +49,7 @@
     width: inherit;
     height: inherit;
     position: absolute;
-    transition: background-color .5s;
+    transition: background-color .3s;
 }
 .pseudo-checkbox>input:checked+.pseudo-checkbox-container{
     background-color: currentColor;
@@ -58,4 +58,63 @@
     content:"c";
     opacity: 0;
     display: inline-block;
+}
+/*使用对号的复选框*/
+@font-face {
+    font-family: 'icomoon';
+    src:  url('fonts/icomoon.eot?6cs2tr');
+    src:  url('fonts/icomoon.eot?6cs2tr#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?6cs2tr') format('truetype'),
+    url('fonts/icomoon.woff?6cs2tr') format('woff'),
+    url('fonts/icomoon.svg?6cs2tr#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+.pseudo-right-checkbox{
+    color: #39b94e;
+    width: 1em;
+    height: 1em;
+    padding: 2px;
+    border: 1px solid;
+    display: inline-block;
+}
+.pseudo-right-checkbox>input{
+    position: absolute;
+    margin: 0;
+    opacity: 0;
+    vertical-align: bottom;
+}
+.pseudo-right-checkbox>input+.pseudo-checkbox-container{
+    display: inline-block;
+    width: inherit;
+    height: inherit;
+    position: absolute;
+    color: transparent;
+    transition:color .3s;
+}
+.pseudo-right-checkbox>input:checked+.pseudo-checkbox-container{
+    color: currentColor;
+}
+.pseudo-right-checkbox>input+.pseudo-checkbox-container::before{
+    content: "\e903";
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'icomoon' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.pseudo-right-checkbox::after{
+    content:"c";
+    opacity: 0;
+    display: inline-block;
+}
+.icon-check:before {
+    content: "\e903";
 }
