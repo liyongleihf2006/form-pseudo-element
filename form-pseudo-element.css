@@ -1,33 +1,36 @@
 /*单选框*/
-.pseudo-radio{
-    color: #39b94e;
-    width: 1em;
-    height: 1em;
-    padding: 2px;
-    border: 1px solid;
-    display: inline-block;
-    border-radius: 50%;
+.pseudo-radio,
+.pseudo-radio * {
+  box-sizing: border-box;
 }
-.pseudo-radio>input{
-    position: absolute;
-    margin: 0;
-    opacity: 0;
-    vertical-align: bottom;
+
+.pseudo-radio {
+  display: inline-flex;
 }
-.pseudo-radio>input+.pseudo-radio-container{
-    display: inline-block;
-    width: inherit;
-    height: inherit;
-    position: absolute;
-    border-radius: inherit;
-    transition: background-color .3s;
+
+.pseudo-radio>input {
+  position: absolute;
+  visibility: hidden;
 }
-.pseudo-radio>input:checked+.pseudo-radio-container{
-    background-color: currentColor;
+
+.pseudo-radio>input+.pseudo-radio-container {
+  --default-color: lightgray;
+  --active-color: green;
+  display: inline-block;
+  width: 1.2em;
+  height: 1.2em;
+  padding: 2px;
+  border-radius: 50%;
+  background-repeat: no-repeat;
+  background-clip: content-box;
+  background-color: var(--default-color);
+  border: 1px solid var(--default-color);
+  transition: border-color .2s, background-color .5s;
 }
-.pseudo-radio::after{
-    content:"r";
-    opacity: 0;
+
+.pseudo-radio>input:checked+.pseudo-radio-container {
+  background-color: var(--active-color);
+  border-color: var(--active-color);
 }
 /*复选框*/
 .pseudo-checkbox{
