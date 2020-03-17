@@ -4,10 +4,6 @@
   box-sizing: border-box;
 }
 
-.pseudo-radio {
-  display: inline-flex;
-}
-
 .pseudo-radio>input {
   position: absolute;
   visibility: hidden;
